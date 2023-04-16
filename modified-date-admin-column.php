@@ -1,15 +1,5 @@
 <?php
 /**
- * The Team51 Plugin MDAC bootstrap file.
- *
- * @since       1.0.0
- * @version     1.0.0
- * @author      WordPress.com Special Projects
- * @license     GPL-3.0-or-later
- *
- * @noinspection    ALL
- *
- * @wordpress-plugin
  * Plugin Name:             Modified Date Admin Column
  * Plugin URI:              https://github.com/a8cteam51/modified-date-admin-column
  * Description:             Adds a modified date column to the admin post list. Also adds the author display name to published and modified columns.

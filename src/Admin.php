@@ -28,12 +28,16 @@ class Admin {
 	 */
 	public function define_hooks(): void {
 
-		// Get site post types
+		// Get site post types exluding built-in ones.
 		$post_types = get_post_types(
 			array(
-				'public' => true,
+				'_builtin' => false,
 			)
 		);
+
+		// Re-add posts and pages.
+		$post_types['post'] = 'post';
+		$post_types['page'] = 'page';
 
 		// Add filter to add custom columns to the post list
 		foreach ( $post_types as $post_type ) {
@@ -59,7 +63,7 @@ class Admin {
 	 */
 	public function insert_element_before( $origin, $element, $key ): array {
 
-		# Get key position
+		// Get key position
 		$keys  = array_keys( $origin );
 		$index = array_search( $key, $keys, true );
 		$pos   = false === $index ? count( $origin ) : $index;
@@ -84,8 +88,8 @@ class Admin {
 
 		// Add new date columns
 		$date_columns = array(
-			'create_date' => __( 'Publication Date', 'wpcomsp-mdac' ),
-			'modify_date' => __( 'Modification Date', 'wpcomsp-mdac' ),
+			'create_date' => __( 'Published Date', 'wpcomsp-mdac' ),
+			'modify_date' => __( 'Modified Date', 'wpcomsp-mdac' ),
 		);
 
 		$columns = $this->insert_element_before( $columns, $date_columns, $date_key );
@@ -132,19 +136,20 @@ class Admin {
 	 * @return void
 	 */
 	public function print_date_column( $column, $post_id ): void {
-		$date_format       = get_option( 'date_format' );
-		$time_format       = get_option( 'time_format' );
-		$author_link       = get_the_author_link();
-		$the_date          = get_the_date( $date_format, $post_id );
-		$the_time          = get_the_date( $time_format, $post_id );
-		$the_modified_date = get_the_modified_date( $date_format, $post_id );
-		$the_modified_time = get_the_modified_date( $time_format, $post_id );
-		$at                = esc_html__( 'at', 'wpcomsp-mdac' );
-		$by                = esc_html__( 'by', 'wpcomsp-mdac' );
+		$date_format = get_option( 'date_format' );
+		$time_format = get_option( 'time_format' );
+		$at          = esc_html__( 'at', 'wpcomsp-mdac' );
+		$by          = esc_html__( 'by', 'wpcomsp-mdac' );
 
 		if ( 'create_date' === $column ) {
+			$author_link = get_the_author_link();
+			$the_date    = get_the_date( $date_format, $post_id );
+			$the_time    = get_the_date( $time_format, $post_id );
 			$this->print_date_column_contents( $the_date, $the_time, $at, $by, $author_link );
 		} elseif ( 'modify_date' === $column ) {
+			$author_link       = get_the_modified_author();
+			$the_modified_date = get_the_modified_date( $date_format, $post_id );
+			$the_modified_time = get_the_modified_date( $time_format, $post_id );
 			$this->print_date_column_contents( $the_modified_date, $the_modified_time, $at, $by, $author_link );
 		}
 	}
@@ -160,13 +165,13 @@ class Admin {
 	 * @return void
 	 * @since 1.0.0
 	 */
-	public function print_date_column_contents( $date, $time, $at, $by, $author_link ): void {
+	public function print_date_column_contents( $date, $time, $at, $by, $author_link = null ): void {
 		printf(
 			'%s %s %s<br /><em>%s %s</em>',
 			esc_html( $date ),
 			esc_html( $at ),
 			esc_html( $time ),
-			esc_html( $by ),
+			empty( $author_link ) ? '' : esc_html( $by ),
 			wp_kses(
 				$author_link,
 				array(
