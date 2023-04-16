@@ -2,20 +2,18 @@
 
 defined( 'ABSPATH' ) || exit;
 
-use WPcomSpecialProjects\Scaffold\Plugin;
-
-// region
+use WPcomSpecialProjects\MDAC\Admin;
 
 /**
- * Returns the plugin's main class instance.
+ * Returns the plugin's admin class instance.
  *
  * @since   1.0.0
  * @version 1.0.0
  *
  * @return  Plugin
  */
-function wpcomsp_scaffold_get_plugin_instance(): Plugin {
-	return Plugin::get_instance();
+function wpcomsp_mdac_get_admin_instance(): Admin {
+	return Admin::init();
 }
 
 /**
@@ -26,15 +24,6 @@ function wpcomsp_scaffold_get_plugin_instance(): Plugin {
  *
  * @return  string
  */
-function wpcomsp_scaffold_get_plugin_slug(): string {
-	return sanitize_key( WPCOMSP_SCAFFOLD_METADATA['TextDomain'] );
+function wpcomsp_mdac_get_plugin_slug(): string {
+	return sanitize_key( WPCOMSP_MDAC_METADATA['TextDomain'] );
 }
-
-// endregion
-
-//region OTHERS
-
-require WPCOMSP_SCAFFOLD_PATH . 'includes/assets.php';
-require WPCOMSP_SCAFFOLD_PATH . 'includes/settings.php';
-
-// endregion

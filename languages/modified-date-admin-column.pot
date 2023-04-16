@@ -1,0 +1,55 @@
+# Copyright (C) 2023 WordPress.com Special Projects
+# This file is distributed under the GPL v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Modified Date Admin Column 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/modified-date-admin-column\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-16T10:38:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: wpcomsp-mdac\n"
+
+#. Plugin Name of the plugin
+msgid "Modified Date Admin Column"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/a8cteam51/modified-date-admin-column"
+msgstr ""
+
+#. Description of the plugin
+msgid "A MDAC for WP.com Special Projects plugins."
+msgstr ""
+
+#. Author of the plugin
+msgid "WordPress.com Special Projects"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wpspecialprojects.wordpress.com"
+msgstr ""
+
+#: modified-date-admin-column.php:54
+msgid "It seems like <strong>Modified Date Admin Column</strong> is corrupted. Please reinstall!"
+msgstr ""
+
+#: src/Admin.php:87
+msgid "Publication Date"
+msgstr ""
+
+#: src/Admin.php:88
+msgid "Modification Date"
+msgstr ""
+
+#: src/Admin.php:142
+msgid "at"
+msgstr ""
+
+#: src/Admin.php:143
+msgid "by"
+msgstr ""

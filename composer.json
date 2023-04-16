@@ -1,9 +1,9 @@
 {
-  "name": "a8cteam51/team51-plugin-scaffold",
+  "name": "wpcomsp/modified-date-admin-columns",
   "type": "wordpress-plugin",
 
-  "description": "A scaffold for WP.com Special Projects plugins.",
-  "homepage": "https://github.com/a8cteam51/team51-plugin-scaffold",
+  "description": "A MDAC for WP.com Special Projects plugins.",
+  "homepage": "https://github.com/a8cteam51/team51-plugin-MDAC",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "name": "Contributors",
-      "homepage": "https://github.com/a8cteam51/team51-plugin-scaffold/graphs/contributors"
+      "homepage": "https://github.com/a8cteam51/team51-plugin-MDAC/graphs/contributors"
     }
   ],
 
@@ -48,11 +48,8 @@
 
   "autoload": {
     "psr-4": {
-      "WPcomSpecialProjects\\Scaffold\\": "src/"
-    },
-    "classmap": [
-      "models/"
-    ]
+      "WPcomSpecialProjects\\MDAC\\": "src/"
+    }
   },
   "autoload-dev": {
 
@@ -70,7 +67,7 @@
       "@makejson"
     ],
     "makepot": "wp i18n make-pot .",
-    "updatepo": "wp i18n update-po ./languages/wpcomsp-scaffold.pot",
+    "updatepo": "wp i18n update-po ./languages/wpcomsp-MDAC.pot",
     "makejson": "wp i18n make-json ./languages --pretty-print --no-purge",
     "makemo": "wp i18n make-mo ./languages",
 

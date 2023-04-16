@@ -1,69 +1,27 @@
-# Team 51 Plugin Scaffold
+# Modified Date Admin Column
 
-Welcome to the Team 51 Plugin Scaffold, a standardized starting point for creating new WordPress plugins for Team 51. This repository contains the necessary files and structure to ensure a consistent approach when developing new plugins.
+Adds a modified date column to the admin post list. Also adds the author display name to published and modified columns.
 
-## Getting Started
+## Installation
 
-To begin, run the command `team51 create-repository --repo-type=plugin`
+1. Download the latest version of the plugin from the [WordPress Plugin Repository](https://wordpress.org/plugins/modified-date-admin-column/).
+2. Upload the `modified-date-admin-column` directory to the `/wp-content/plugins/` directory on your web server.
+3. Activate the plugin through the 'Plugins' menu in WordPress.
 
-If you don't want to create a repository for your plugin, another option is to clone or download this repository. Rename the folder and the main PHP file with your desired plugin name. Be sure to follow the naming convention: plugin-name for the folder and plugin-name.php for the main PHP file.
+## Usage
 
-## Configuration
+Once the plugin is activated, the modified date column will be added to the admin post list by default. You can disable this feature by going to the plugin settings page and unchecking the "Enable modified date column" option.
 
-You'll need to update the following fields in the main PHP file's header:
+The plugin also adds the author display name to the published and modified columns. This feature can be enabled or disabled on the plugin settings page as well.
 
-- Plugin Name: The name of your plugin
-- Plugin URI: The URL of the plugin's repository
-- Description: A brief description of the plugin's functionality.
+## Support
 
-## Folder Structure
+If you encounter any issues with the plugin, please [submit a support ticket](https://wordpress.org/support/plugin/modified-date-admin-column/) on the WordPress Plugin Repository page.
 
-This scaffold has the following folder structure:
+## Contributing
 
-```
-plugin-name/
-├── assets/
-│   ├── css/
-│   │   ├── build/
-│   │   └── src/
-│   ├── js/
-│   │   ├── build/
-│   │   └── src/
-│   └── images/
-├── blocks/
-│   ├── build/
-│   └── src/
-├── includes/
-├── languages/
-├── models/
-├── src/
-│   ├ ...
-│   └── Integrations/
-├── templates/
-│   ├ ...
-│   └── admin/
-└── plugin-name.php
-```
+If you would like to contribute to the plugin, feel free to [fork the repository on GitHub](https://github.com/a8cteam51/modified-date-admin-column) and submit a pull request.
 
-- assets: A folder to store all static assets such as styles, scripts, and images.
-- blocks: A folder for storing Gutenberg block files, if the plugin uses custom blocks.
-- includes: Contains any PHP files with additional functionality for the plugin. Mostly useful for helper functions.
-- languages: Contains the translation files for your plugin.
-- models: Contains PHP classes or data models that represent the plugin's data structures. As an example, think of WooCommerce's `WC_Order` class.
-- src: A folder for organizing the plugin's main PHP classes or code components, such as integrations with other plugins or services. These classes should be organized into subfolders following the [PSR-4](https://www.php-fig.org/psr/psr-4/) convention. `Composer` will handle the autoloading for these classes.
-- templates: Contains any PHP template files used for rendering HTML output. Admin templates should generally be in their own folder separated from front-end templates.
-- plugin-name.php: The main PHP file containing the plugin header and bootstraping functionality.
+## License
 
-## Development
-
-Develop your plugin by adding the necessary functionality by creating new files within the includes folder. Remember to enqueue your styles and scripts within the assets folder.
-
-Follow the WordPress Coding Standards for PHP, CSS, and JavaScript when writing your code. You can read more about linting and formatting your code in the [Team51 Project Scaffold](https://github.com/a8cteam51/team51-project-scaffold#code-style--quality).
-
-## Documentation
-
-As you develop your plugin, update the README.md file with detailed information about your plugin's features, usage, installation, and any other pertinent information.
-
-## Testing
-
-If your plugin is WooCommerce specific, it should be tested with the Storefront theme and latest default theme. If it's a general plugin, it should be tested with the latest default theme as well as Twenty Twenty-One (a non-FSE theme).
+This plugin is released under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
